@@ -6,11 +6,7 @@ include "config.php";
 
 
 // check user status
-$loggedin_user=$_SESSION['loggedin_user'];
-include "config.php";
-$checkuser=mysqli_query($conn, "SELECT * FROM users WHERE phone='$loggedin_user'");
 
- while($row = $checkuser->fetch_assoc()) {
                     $id = $row['id'];
                     $name = $row["fullname"];
                     $email = $row["email"];
