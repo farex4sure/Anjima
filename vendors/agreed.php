@@ -6,7 +6,9 @@ if(!isset($_SESSION['loggedin_vendor'])){
     header("location:vendor_signin.php");
 }
 
-
+$qrsender=$_SESSION['qrsender'];
+$amt=$_SESSION['amt'];
+$ddate=$_SESSION['ddate'];
 
 $detail = "SELECT * FROM vendors WHERE phone='".$_SESSION['loggedin_vendor']."'";
     $results = $conn->query($detail);
