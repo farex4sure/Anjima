@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
 $insert=mysqli_query($conn, "INSERT INTO kyc (fullname,title,country,dob,lga,state,email,phone,nin,address,res_town,res_state,tracking_id,date,type)
 VALUES('$fullname','$title','$country','$dob','$b_lga','$b_state','$email','$phone','$nins','$add','$res_town','$res_state','$trackingid','$date','vendor')");
 
-$update=mysqli_query($conn,"UPDATE users SET st='1' WHERE phone='".$_SESSION['loggedin_vendor']."'");
+$update=mysqli_query($conn,"UPDATE vendors SET st='1' WHERE phone='".$_SESSION['loggedin_vendor']."'");
 
 if($insert == true && $update){
 header("location:scanner/src/index.php");
