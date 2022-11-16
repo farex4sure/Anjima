@@ -48,7 +48,7 @@ if(!isset($_SESSION['loggedin_vendor'])){
                 $name = $rows["fullname"];
             }
         }
-    $kyc = "SELECT * FROM kyc WHERE phone='$debtor'";
+    $kyc = "SELECT * FROM kyc WHERE reg_phone='$debtor'";
         $rest = $conn->query($kyc);
         if ($rest->num_rows > 0) {
             while($row1 = $rest->fetch_assoc()) {

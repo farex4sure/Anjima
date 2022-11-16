@@ -9,7 +9,6 @@ $err="";
     $fname=$_SESSION['fname'];
     $sname=$_SESSION['sname'];
     $title=$_SESSION['title'];
-    $country=$_SESSION['country'];
     $dob=$_SESSION['dob'];
     $b_lga=$_SESSION['b_lga'];
     $b_state=$_SESSION['b_state'];
@@ -17,10 +16,9 @@ $err="";
     $phone=$_SESSION['phone'];
     $nins=$_SESSION['nins'];
     $add=$_SESSION['add'];
-    $res_town=$_SESSION['res_town'];
     $res_state=$_SESSION['res_state'];
-    $trackingid=$_SESSION['trackingid'];
     $fullname=$fname." ".$sname;
+    $date=time();
 // $details = "SELECT * FROM users WHERE phone='".$_SESSION['loggedin_user']."'";
 //     $result = $conn->query($details);
 //     if ($result->num_rows > 0) {
@@ -29,15 +27,17 @@ $err="";
 //             $phones = $row["phone"];
 //         }
 //     }
+$reg_phone=$_SESSION['loggedin_user'];
 
 if(isset($_POST['submit'])){
 
-$insert=mysqli_query($conn, "INSERT INTO kyc (fullname,title,country,dob,lga,state,email,phone,nin,address,res_town,res_state,tracking_id,date,type)
-VALUES('$fullname','$title','$country','$dob','$b_lga','$b_state','$email','$phone','$nins','$add','$res_town','$res_state','$trackingid','$date','user')");
+$insert=mysqli_query($conn, "INSERT INTO kyc (fullname,title,dob,lga,state,email,phone,reg_phone,nin,address,res_state,date,type)
+VALUES('$fullname','$title','$dob','$b_lga','$b_state','$email','$phone','$reg_phone','$nins','$add','$res_state','$date','user')");
+
 
 $update=mysqli_query($conn,"UPDATE users SET st='1' WHERE phone='".$_SESSION['loggedin_user']."'");
 
-if($insert == true && $update){
+if($insert == true && $update == true){
 header("location:vendors.php");
 }else{
     $err = '<div id="alert-border-3" class="flex p-4 mb-4 bg-red-100 border-t-4 border-red-500 dark:bg-red-200" role="alert">

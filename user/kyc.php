@@ -44,24 +44,22 @@ if ($err) {
 
 if(isset($resp['nin_data'])){
 
-    $_SESSION['fname']=$resp['nin_data']['firstname'];
+     $_SESSION['fname']=$resp['nin_data']['firstname'];
     $_SESSION['sname']=$resp['nin_data']['surname'];
     $_SESSION['title']=$resp['nin_data']['title'];
-    $_SESSION['country']=$resp['nin_data']['birthcountry'];
     $_SESSION['dob']=$resp['nin_data']['birthdate'];
     $_SESSION['b_lga']=$resp['nin_data']['birthlga'];
     $_SESSION['b_state']=$resp['nin_data']['birthstate'];
     $_SESSION['email']=$resp['nin_data']['email'];
     $_SESSION['phone']=$resp['nin_data']['telephoneno'];
-    $_SESSION['nins']=$resp['nin_data']['nin'];
+    $_SESSION['nins']=$resp['nin_data']['vnin'];
     $_SESSION['add']=$resp['nin_data']['residence_address'];
-    $_SESSION['res_town']=$resp['nin_data']['residence_town'];
     $_SESSION['res_state']=$resp['nin_data']['residence_state'];
-    $_SESSION['trackingid']=$resp['nin_data']['trackingId'];
     $date=time();
     $_SESSION['fullname']=$_SESSION['fname']." ".$_SESSION['sname'];
 
     header("location:kyc2.php");
+
 
 }else{
     $err = '<div id="alert-border-3" class="flex p-4 mb-4 bg-red-100 border-t-4 border-red-500 dark:bg-red-200" role="alert">

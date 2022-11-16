@@ -55,7 +55,7 @@ $details = "SELECT * FROM vendors WHERE phone='$vphone'";
                 }
             }
 
-$kyc = "SELECT * FROM kyc WHERE phone='$vphone'";
+$kyc = "SELECT * FROM kyc WHERE reg_phone='$phone'";
             $result = $conn->query($kyc);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
