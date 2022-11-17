@@ -152,6 +152,11 @@ if(isset($_POST['submit'])){
         </div>
         ';
             ?>
+            <script>
+                setTimeout(function(){
+                    window.location.href = "payloan.php?pay=<?php echo ($_GET["pay"])?>";
+                }, 3000);
+            </script>
             <!--<script type="text/javascript">
                 window.location.href="payloan.php?pay=<?php echo ($_GET["pay"])?>";
             </script>-->

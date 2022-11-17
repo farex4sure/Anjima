@@ -226,7 +226,7 @@ $vpic=$vendors['pic'];
 
 //get the vendor address in kyc table
 
-$getVD=mysqli_query($conn, "SELECT * FROM kyc WHERE phone='$vphone'");
+$getVD=mysqli_query($conn, "SELECT * FROM kyc WHERE reg_phone='$vphone'");
 
 while($vkyc=mysqli_fetch_assoc($getVD)){
 
