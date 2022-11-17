@@ -1,12 +1,4 @@
-<?php
-session_start();
-include "config.php";
-$list="";
-if(!isset($_SESSION['loggedin_user'])){
-    header("location:signin.php");
-}
-function get_time_ago( $time )
-{
+
     $time_difference = time() - $time;
 
     if( $time_difference < 1 ) { return 'Just now'; }
