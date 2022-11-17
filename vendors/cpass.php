@@ -1,4 +1,16 @@
-
+<?php
+session_start();
+include "config.php";
+$err="";
+if(!isset($_SESSION['loggedin_vendor'])){
+    header("location:vendor_signin.php");
+}
+$details = "SELECT * FROM vendors WHERE phone='".$_SESSION['loggedin_vendor']."'";
+            $result = $conn->query($details);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $pwd = $row["pwd"];
+                }
             }
 if(isset($_POST['submit'])){
 $oldpass=$_POST['oldpass'];
