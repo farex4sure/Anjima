@@ -177,6 +177,71 @@ header("location:vendors.php");
                     </div>
                 </div>
 
+
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" value="<?php echo $email ?>" disabled class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-600 peer" placeholder=" " required="">
+                        <label  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 font-bold peer-focus:-translate-y-6">Email</label>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" value="<?php echo $add ?>" disabled class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-600 peer" placeholder=" " required="">
+                        <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 font-bold peer-focus:-translate-y-6">Address</label>
+                    </div>
+                </div>
+
+
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" value="<?php echo $phone ?>" disabled class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-600 peer" placeholder=" " required="">
+                        <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 font-bold peer-focus:-translate-y-6">Phone number</label>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" value="<?php echo $res_state ?>" disabled class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-600 peer" placeholder=" " required="">
+                        <label class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-600 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 font-bold peer-focus:-translate-y-6">Residence State</label>
+                    </div>
+                </div>
+
+
+                <button type="submit" name="submit" class="text-white bg-teal-600 hover:bg-teal-400 my-8 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">Submit</button>
+            </form>
+        </main>
+                </div>
+            </div>
+        </main>
+        <!-- MAIN ENDS HERE -->
+        <script>
+            // TOOGLE FORM HIDE-SHOW BUTTON
+            const editPhotoBtn = document.querySelector('.edit-photo-btn');
+            const profilePhoto = document.querySelector('.profile-photo');
+            editPhotoBtn.addEventListener('click', () => {
+                profilePhoto.click();
+            })
+            const passwordDisplayToggle = document.querySelectorAll('.password-display-toggle');
+            passwordDisplayToggle.forEach((toggle) => {
+                toggle.addEventListener('click', (e) => {
+                    toggle.classList.toggle('hide')
+                    let type = toggle.classList.contains('hide')? 'password': 'text';
+                    e.currentTarget.querySelectorAll('span').forEach(span => {
+                        span.classList.toggle('hidden')
+                    });
+                    let input = e.currentTarget.parentElement.parentElement.querySelector('input');
+                    input.type = `${type}`;
+                    toggle.classList.toggle('text-cyan-500');
+                })
+            });
+        </script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+        <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        $(window).on('load', function(){
+            $('.spin-wrapper').fadeOut("slow");
+        });
+        </script>
+</body>
 </html>
 
   
