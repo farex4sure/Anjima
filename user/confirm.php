@@ -1,15 +1,4 @@
-<?php
-session_start();
-include "config.php";
-if(!isset($_SESSION['loggedin_user'])){
-    header("location:signin.php");
-}
-$details = "SELECT * FROM users WHERE phone='".$_SESSION['r_phone']."'";
-            $result = $conn->query($details);
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    $name = $row["fullname"];
-                    $pic = $row["pic"];
+
                 }
             }
 $vdetails = "SELECT * FROM vendors WHERE phone='".$_SESSION['r_phone']."'";
