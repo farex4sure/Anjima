@@ -1,4 +1,14 @@
+<?php
+session_start();
+include "config.php";
+$err="";
+if(!isset($_SESSION['loggedin_vendor'])){
+    header("location:vendor_signin.php");
+}
 
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <script src="js/jquery.min.js"></script>  
     <meta charset="UTF-8">
